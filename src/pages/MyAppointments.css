@@ -1,0 +1,125 @@
+.appts-page { min-height: 80vh; }
+.appts-header {
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  padding: 60px 24px 40px;
+}
+.appts-header-inner { max-width: 900px; margin: 0 auto; color: white; }
+.appts-header .section-title { color: white; margin-bottom: 8px; }
+.appts-header .section-subtitle { color: rgba(255,255,255,0.65); }
+.appts-inner { max-width: 900px; margin: 0 auto; padding: 32px 24px 60px; }
+
+/* STATS */
+.appts-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+.astat-card { padding: 24px; text-align: center; }
+.astat-icon { font-size: 1.8rem; margin-bottom: 8px; }
+.astat-val { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 6px; }
+.astat-label { font-size: 0.82rem; color: var(--gray-400); font-weight: 500; letter-spacing: 0.03em; }
+
+/* FILTER TABS */
+.filter-tabs { display: flex; gap: 10px; margin-bottom: 24px; }
+.filter-tab {
+  padding: 9px 22px;
+  border-radius: 50px;
+  border: 2px solid var(--gray-200);
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.filter-tab:hover { border-color: var(--blue-light); color: var(--blue); }
+.filter-tab.active { background: var(--blue); border-color: var(--blue); color: white; }
+
+/* APPOINTMENTS LIST */
+.appts-list { display: flex; flex-direction: column; gap: 18px; margin-bottom: 32px; }
+
+.appt-card {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  overflow: hidden;
+}
+.appt-card.cancelled { opacity: 0.7; }
+
+.appt-left { flex-shrink: 0; }
+.appt-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+.appt-center { flex: 1; min-width: 0; }
+.appt-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.appt-doctor {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.appt-details { display: flex; flex-direction: column; gap: 6px; }
+.appt-detail-item { display: flex; align-items: center; gap: 8px; font-size: 0.84rem; color: var(--gray-600); }
+.adi-icon { font-size: 0.85rem; }
+
+.appt-right {
+  flex-shrink: 0;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.appt-fee { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); font-weight: 700; }
+.appt-fee-label { font-size: 0.72rem; color: var(--gray-400); margin-bottom: 8px; }
+.appt-id {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  font-weight: 500;
+  background: var(--gray-100);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* EMPTY */
+.appts-empty { padding: 80px 40px; text-align: center; max-width: 480px; margin: 0 auto; }
+.ae-icon { font-size: 4rem; margin-bottom: 20px; }
+.appts-empty h2 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--navy); margin-bottom: 12px; }
+.appts-empty p { color: var(--gray-600); margin-bottom: 28px; line-height: 1.7; }
+
+/* CTA */
+.appts-cta { text-align: center; }
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 22, 40, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+  padding: 16px;
+}
+.modal-box { padding: 40px; max-width: 420px; width: 100%; text-align: center; }
+.modal-icon { font-size: 2.8rem; margin-bottom: 16px; }
+.modal-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 12px; }
+.modal-sub { color: var(--gray-600); line-height: 1.65; margin-bottom: 28px; font-size: 0.9rem; }
+.modal-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  .appts-stats { grid-template-columns: 1fr 1fr; }
+  .appt-card { flex-direction: column; }
+  .appt-right { flex-direction: row; align-items: center; justify-content: space-between; text-align: left; }
+  .appt-top { flex-direction: column; }
+}

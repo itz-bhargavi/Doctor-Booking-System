@@ -1,0 +1,175 @@
+.doctors-page { min-height: 80vh; }
+
+.doctors-header {
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  padding: 60px 24px 40px;
+}
+.doctors-header-inner { max-width: 1200px; margin: 0 auto; color: white; }
+.doctors-header .section-title { color: white; margin-bottom: 8px; }
+.doctors-header .section-subtitle { color: rgba(255,255,255,0.65); }
+
+.doctors-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* FILTERS */
+.filters-panel {
+  padding: 28px 24px;
+  position: sticky;
+  top: 100px;
+}
+.filter-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--gray-200);
+}
+.filter-group { margin-bottom: 20px; }
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.toggle-switch {
+  width: 48px;
+  height: 26px;
+  background: var(--gray-200);
+  border-radius: 50px;
+  position: relative;
+  transition: var(--transition);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.toggle-switch.on { background: var(--blue); }
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: var(--transition);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.toggle-switch.on .toggle-thumb { transform: translateX(22px); }
+.filter-results-count { text-align: center; margin-top: 4px; }
+
+/* DOCTOR CARDS */
+.doctor-list { display: flex; flex-direction: column; gap: 20px; }
+
+.doctor-card { padding: 0; overflow: hidden; }
+.dc-main { display: flex; gap: 20px; padding: 24px; }
+
+.dc-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  flex-shrink: 0;
+  position: relative;
+}
+.dc-status {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2.5px solid white;
+}
+.dc-status.online { background: var(--green); }
+.dc-status.offline { background: var(--gray-400); }
+
+.dc-info { flex: 1; min-width: 0; }
+.dc-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+.dc-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.dc-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.dc-fee-block { text-align: right; flex-shrink: 0; }
+.dc-fee { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--navy); font-weight: 700; }
+.dc-fee-label { font-size: 0.75rem; color: var(--gray-400); }
+.dc-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 10px 0;
+  font-size: 0.83rem;
+  color: var(--gray-600);
+}
+.dc-rating { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+.dc-rating-val { font-weight: 700; color: var(--navy); font-size: 0.92rem; }
+.dc-reviews { color: var(--gray-400); font-size: 0.82rem; }
+.dc-slot-info { }
+.dc-next-slot {
+  background: #eff6ff;
+  color: var(--blue);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.dc-expanded { padding: 0 24px 8px; }
+.dc-about h4 { font-weight: 700; color: var(--navy); margin-bottom: 8px; font-size: 0.9rem; }
+.dc-about p { color: var(--gray-600); font-size: 0.88rem; line-height: 1.7; margin-bottom: 10px; }
+.dc-edu { font-size: 0.83rem; color: var(--gray-600); font-weight: 500; }
+
+.dc-actions {
+  display: flex;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--gray-100);
+  border-top: 1px solid var(--gray-200);
+  justify-content: flex-end;
+}
+
+/* EMPTY STATE */
+.empty-state {
+  padding: 60px 40px;
+  text-align: center;
+  color: var(--gray-600);
+}
+.empty-icon { font-size: 3rem; margin-bottom: 16px; }
+.empty-state h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: 8px; }
+.empty-state p { margin-bottom: 20px; }
+
+@media (max-width: 900px) {
+  .doctors-layout { grid-template-columns: 1fr; }
+  .filters-panel { position: static; }
+}
+@media (max-width: 600px) {
+  .dc-main { flex-direction: column; }
+  .dc-top { flex-direction: column; }
+  .dc-fee-block { text-align: left; }
+  .dc-actions { flex-direction: column; }
+  .dc-actions .btn { width: 100%; justify-content: center; }
+}

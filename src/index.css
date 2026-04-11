@@ -1,0 +1,26 @@
+body{
+  background-color: rgb(11, 11, 27);
+  color: white;
+}
+h1{
+  display: flex;
+  justify-content: center;
+ 
+}
+.navbar{
+  display:flex;
+  justify-content: flex-end;
+  
+}
+a{
+  text-decoration: none;
+  margin:5px;
+}
+.foot{
+  display: flex;
+  background-color: brown;
+  height:700px;
+  width:auto;
+  justify-content: center;
+  padding: 20px;
+}
