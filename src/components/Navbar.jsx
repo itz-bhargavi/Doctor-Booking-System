@@ -25,7 +25,7 @@ export default function Navbar({ page, navigate, appointmentCount }) {
             <span>+</span>
           </div>
           <div className="logo-text">
-            <span className="logo-main">MediBook</span>
+            <span className="logo-main">DocBridge</span>
             <span className="logo-sub">Healthcare</span>
           </div>
         </div>

@@ -282,7 +282,7 @@
   gap: 16px;
 }
 .footer-logo { display: flex; align-items: center; gap: 10px; }
-.footer-copy { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
+.footer-copy { color: rgba(255,255,255,0.4); font-size: 0.85rem; text-align: center;}
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {

@@ -248,7 +248,7 @@ export default function Home({ navigate }) {
             <div className="logo-icon" style={{ width: 36, height: 36, fontSize: "1.1rem" }}>+</div>
             <span className="logo-main" style={{ fontSize: "1.1rem" }}>MediBook</span>
           </div>
-          <p className="footer-copy">© 2025 MediBook Healthcare. Built with ❤️ for better health.</p>
+          <p className="footer-copy">© 2025 DocBridge Healthcare. Built with ❤️ for better health.</p>
         </div>
       </footer>
     </div>
